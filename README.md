@@ -1,4 +1,14 @@
-# Type theo conventional commit
+## Installation
+1. You should install [prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and [eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) before dev 
+2. Set up pnpm for install dependencies in project
+```
+npm install -g pnpm && pnpm i
+```
+3. When install finish, you can dev (it will run on localhost)
+```
+pnpm dev 
+```
+## Type theo conventional commit
 - feat: thêm một feature
 - fix: fix bug cho hệ thống, vá lỗi trong codebase
 - refactor: sửa code nhưng không fix bug cũng không thêm feature hoặc đôi khi bug cũng được fix từ việc refactor.
