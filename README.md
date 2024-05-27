@@ -1,3 +1,6 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ab6f60ba-bc55-46f5-80a9-129d8b61773f/deploy-status)](https://app.netlify.com/sites/conversebot/deploys)
+## Summary
+- Learning enlish with gemini ai
 ## Installation
 1. You should install [prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and [eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) before dev 
 2. Set up pnpm for install dependencies in project
