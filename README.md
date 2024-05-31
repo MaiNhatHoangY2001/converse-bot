@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ab6f60ba-bc55-46f5-80a9-129d8b61773f/deploy-status)](https://conversebot.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ab6f60ba-bc55-46f5-80a9-129d8b61773f/deploy-status)](https://conversebot.netlify.app) ![Website Deploy](https://deploy-badge.vercel.app/?url=https://api-conversebot.vercel.app/&name=converse-server)
 ## Summary
 - Learning enlish with gemini ai
 ## Installation
