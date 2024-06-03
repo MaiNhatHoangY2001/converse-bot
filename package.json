@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "pro": "vite --mode production",
     "build": "tsc && vite build",
     "precommit": "lint-staged",
     "prepare": "husky",
