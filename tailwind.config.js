@@ -14,6 +14,9 @@ export default {
       "accent-color4": "#174444",
       "static-color": "#F7F7F7",
     },
+    fontFamily: {
+      roboto: ["Roboto"],
+    },
   },
   plugins: [],
 };

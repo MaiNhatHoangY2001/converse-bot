@@ -33,10 +33,15 @@ module.exports = {
     "react/jsx-props-no-spreading": "off",
     "react/require-default-props": "off",
     "react/button-has-type": "off",
+    "prettier/prettier": 0,
   },
   overrides: [
     {
-      extends: ["plugin:@typescript-eslint/disable-type-checked"],
+      extends: [
+        "plugin:@typescript-eslint/disable-type-checked",
+        "eslint:all",
+        "plugin:react/all",
+      ],
       files: ["./**/*.js"],
     },
   ],
