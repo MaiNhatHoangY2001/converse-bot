@@ -22,6 +22,9 @@ importers:
       "@mui/material":
         specifier: ^5.15.18
         version: 5.15.18(@emotion/react@11.11.4(@types/react@18.2.64)(react@18.2.0))(@emotion/styled@11.11.5(@emotion/react@11.11.4(@types/react@18.2.64)(react@18.2.0))(@types/react@18.2.64)(react@18.2.0))(@types/react@18.2.64)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      "@types/prop-types":
+        specifier: ^15.7.12
+        version: 15.7.12
       axios:
         specifier: ^1.6.8
         version: 1.6.8
