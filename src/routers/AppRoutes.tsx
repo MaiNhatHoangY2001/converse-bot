@@ -7,6 +7,7 @@ import About from "../pages/About/About";
 import Home from "../pages/Home/Home";
 import Login from "../pages/auth/Login";
 import {Register} from "../pages/auth/Register";
+import Welcome from "../pages/auth/Welcome";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 
@@ -24,6 +25,10 @@ function AppRoutes() {
       <Routes>
         {/* Public Routes */}
         <Route path="/auth/*" element={<PublicLayout />}>
+          <Route
+            path="welcome"
+            element={<PublicRoute element={<Welcome />} />}
+          />
           <Route path="login" element={<PublicRoute element={<Login />} />} />
           <Route
             path="register"
