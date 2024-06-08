@@ -33,6 +33,22 @@ module.exports = {
     "react/jsx-props-no-spreading": "off",
     "react/require-default-props": "off",
     "react/button-has-type": "off",
+
+    // config accept arrow function
+    // https://stackoverflow.com/questions/69928061/struggling-with-typescript-react-eslint-and-simple-arrow-functions-components
+    "react/function-component-definition": "off",
+
+    // Ensure consistent use of file extension within the import path
+    // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/imports.js#L139
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        js: "never",
+        mjs: "never",
+        jsx: "never",
+      },
+    ],
   },
   overrides: [
     {

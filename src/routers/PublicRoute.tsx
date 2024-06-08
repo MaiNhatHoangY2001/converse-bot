@@ -14,6 +14,6 @@ import {Navigate} from "react-router-dom";
  * returned.
  */
 export default function PublicRoute({element}: {element: JSX.Element}) {
-  const isAuthenticated = !!localStorage.getItem("authToken"); // Example auth check
+  const isAuthenticated = !!localStorage.getItem("accessToken"); // Example auth check
   return !isAuthenticated ? element : <Navigate to="/" />;
 }

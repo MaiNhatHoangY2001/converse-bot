@@ -9,3 +9,10 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
+
+declare namespace APIAuth {
+  interface Login {
+    email: string;
+    password: string;
+  }
+}

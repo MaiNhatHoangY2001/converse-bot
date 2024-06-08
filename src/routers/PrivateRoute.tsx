@@ -14,6 +14,6 @@ import {Navigate} from "react-router-dom";
  * that redirects the user to the "/auth/login" route.
  */
 export default function PrivateRoute({element}: {element: JSX.Element}) {
-  const isAuthenticated = !!localStorage.getItem("authToken"); // Example auth check
+  const isAuthenticated = !!localStorage.getItem("accessToken"); // Example auth check
   return isAuthenticated ? element : <Navigate to="/auth/login" />;
 }

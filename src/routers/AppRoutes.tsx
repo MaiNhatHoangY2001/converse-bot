@@ -1,45 +1,32 @@
-import React, {useTransition} from "react";
-import {Navigate, Route, Routes, useLocation} from "react-router-dom";
-import ErrorPage from "../components/common/ErrorPage";
-import LoadingPage from "../components/common/LoadingPage";
-import PublicLayout from "../layouts/PublicLayout";
-import About from "../pages/About/About";
-import Home from "../pages/Home/Home";
-import Login from "../pages/auth/Login";
-import {Register} from "../pages/auth/Register";
-import PrivateRoute from "./PrivateRoute";
-import PublicRoute from "./PublicRoute";
+import {Navigate, Route, Routes} from "react-router-dom";
+import Login from "@pages/auth/Login.tsx";
+import Register from "@pages/auth/Register.tsx";
+import Home from "@pages/Home/Home.tsx";
+import About from "@pages/About/About.tsx";
+import ErrorPage from "@components/common/ErrorPage.tsx";
+import PublicRoute from "./PublicRoute.tsx";
+import PrivateRoute from "./PrivateRoute.tsx";
 
 function AppRoutes() {
-  const [isPending, startTransition] = useTransition();
-  const location = useLocation();
-
-  React.useEffect(() => {
-    startTransition(() => {});
-  }, [location.pathname]);
-
   return (
-    <>
-      {isPending && <LoadingPage />}
-      <Routes>
-        {/* Public Routes */}
-        <Route path="/auth/*" element={<PublicLayout />}>
-          <Route path="login" element={<PublicRoute element={<Login />} />} />
-          <Route
-            path="register"
-            element={<PublicRoute element={<Register />} />}
-          />
-          <Route path="*" element={<Navigate to="/auth/login" />} />
-        </Route>
+    <Routes>
+      {/* Public Routes */}
+      <Route path={"auth/*"}>
+        <Route path="login" element={<PublicRoute element={<Login />} />} />
+        <Route
+          path="register"
+          element={<PublicRoute element={<Register />} />}
+        />
+        <Route path="*" element={<Navigate to="/auth/login" />} />
+      </Route>
 
-        {/* Private Routes */}
-        <Route path="/" element={<PrivateRoute element={<Home />} />} />
-        <Route path="/about" element={<PrivateRoute element={<About />} />} />
+      {/* Private Routes */}
+      <Route path="/" element={<PrivateRoute element={<Home />} />} />
+      <Route path="/about" element={<PrivateRoute element={<About />} />} />
 
-        {/* Error Route */}
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-    </>
+      {/* Error Route */}
+      <Route path="*" element={<ErrorPage />} />
+    </Routes>
   );
 }
 
