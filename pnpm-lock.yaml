@@ -19,24 +19,39 @@ importers:
       "@hookform/resolvers":
         specifier: ^3.6.0
         version: 3.6.0(react-hook-form@7.51.5(react@18.2.0))
+      "@mui/base":
+        specifier: 5.0.0-beta.40
+        version: 5.0.0-beta.40(@types/react@18.2.64)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       "@mui/icons-material":
         specifier: ^5.15.18
         version: 5.15.18(@mui/material@5.15.18(@emotion/react@11.11.4(@types/react@18.2.64)(react@18.2.0))(@emotion/styled@11.11.5(@emotion/react@11.11.4(@types/react@18.2.64)(react@18.2.0))(@types/react@18.2.64)(react@18.2.0))(@types/react@18.2.64)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@types/react@18.2.64)(react@18.2.0)
       "@mui/material":
         specifier: ^5.15.18
         version: 5.15.18(@emotion/react@11.11.4(@types/react@18.2.64)(react@18.2.0))(@emotion/styled@11.11.5(@emotion/react@11.11.4(@types/react@18.2.64)(react@18.2.0))(@types/react@18.2.64)(react@18.2.0))(@types/react@18.2.64)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      "@types/prop-types":
+        specifier: ^15.7.12
+        version: 15.7.12
       axios:
         specifier: ^1.6.8
         version: 1.6.8
+      classnames:
+        specifier: ^2.5.1
+        version: 2.5.1
       pretty-quick:
         specifier: ^4.0.0
         version: 4.0.0(prettier@3.2.5)
+      prop-types:
+        specifier: ^15.8.1
+        version: 15.8.1
       react:
         specifier: ^18.2.0
         version: 18.2.0
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      react-flags-select:
+        specifier: ^2.2.3
+        version: 2.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-hook-form:
         specifier: ^7.51.5
         version: 7.51.5(react@18.2.0)
@@ -1652,6 +1667,12 @@ packages:
         integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==,
       }
     engines: {node: ">= 8.10.0"}
+
+  classnames@2.5.1:
+    resolution:
+      {
+        integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==,
+      }
 
   clsx@2.1.1:
     resolution:
@@ -3434,6 +3455,15 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
+  react-flags-select@2.2.3:
+    resolution:
+      {
+        integrity: sha512-HuO0H5/r6gdPwh9HyxUoYrqzjCPMZcZQmSjKd3CRSIeHnexX5crRdiS/ZxSNaMIw4SFEG0dctToFlibhfOv+6A==,
+      }
+    peerDependencies:
+      react: ">=16.8.0"
+      react-dom: ">=16.8.0"
+
   react-hook-form@7.51.5:
     resolution:
       {
@@ -5041,6 +5071,8 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
+  classnames@2.5.1: {}
+
   clsx@2.1.1: {}
 
   color-convert@1.9.3:
@@ -6093,6 +6125,13 @@ snapshots:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.2
+
+  react-flags-select@2.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      classnames: 2.5.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      sass: 1.77.2
 
   react-hook-form@7.51.5(react@18.2.0):
     dependencies:

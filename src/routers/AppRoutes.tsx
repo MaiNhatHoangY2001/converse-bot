@@ -6,12 +6,14 @@ import About from "@pages/About/About.tsx";
 import ErrorPage from "@components/common/ErrorPage.tsx";
 import PublicRoute from "./PublicRoute.tsx";
 import PrivateRoute from "./PrivateRoute.tsx";
+import Welcome from "@pages/auth/Welcome.tsx";
 
 function AppRoutes() {
   return (
     <Routes>
       {/* Public Routes */}
       <Route path={"auth/*"}>
+        <Route path="welcome" element={<PublicRoute element={<Welcome />} />} />
         <Route path="login" element={<PublicRoute element={<Login />} />} />
         <Route
           path="register"

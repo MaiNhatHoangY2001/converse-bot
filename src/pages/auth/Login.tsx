@@ -42,7 +42,7 @@ const Login = () => {
 
   return (
     <main className="w-screen min-h-dvh bg-primary-color flex justify-center items-center p-4">
-      <section className="container mx-auto flex bg-black/5 p-14 max-sm:px-4 rounded-3xl">
+      <section className="container mx-auto flex gap-14 bg-black/5 p-14 max-sm:px-4 rounded-3xl">
         <article className="flex-1 flex flex-col gap-16 max-sm:gap-12">
           <hgroup className="flex flex-col gap-4 max-sm:items-center">
             <h1 className="text-5xl font-semibold max-sm:text-3xl">Login</h1>
