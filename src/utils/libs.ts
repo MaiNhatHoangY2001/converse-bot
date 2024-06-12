@@ -1,4 +1,4 @@
-export function numberToTime(seconds: number): string {
+export function convertNum2Time(seconds: number): string {
   const minutes = Math.floor(seconds / 60);
   const remainingSeconds = seconds % 60;
 

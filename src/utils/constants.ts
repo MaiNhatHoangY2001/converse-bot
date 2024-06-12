@@ -21,3 +21,5 @@ export const IMAGES = {
   voice: `${assetsImages}/voice.gif`,
   speakWithAI: `${assetsImages}/speak-with-AI.png`,
 };
+
+export const END_TIME = 60 * 5;

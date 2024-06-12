@@ -9,7 +9,7 @@ import {authResetPassword} from "@services/api/auth-api.ts";
 import {ResetPasswordSchema, ResetPasswordType} from "@utils/schema.ts";
 import {isAxiosError} from "axios";
 
-const FormResetPassword = () => {
+const ResetPasswordForm = () => {
   const navigate = useNavigate();
   const {id} = useParams();
   const [isLoading, setIsLoading] = useState(false);
@@ -38,7 +38,7 @@ const FormResetPassword = () => {
       }
     } catch (error) {
       if (isAxiosError<APIAuth.Error>(error)) {
-        toast.error(error.response?.data?.message || "Set password failed");
+        toast.error(error.response?.data?.message ?? "Set password failed");
       }
     } finally {
       setIsLoading(false);
@@ -92,4 +92,4 @@ const FormResetPassword = () => {
   );
 };
 
-export default FormResetPassword;
+export default ResetPasswordForm;

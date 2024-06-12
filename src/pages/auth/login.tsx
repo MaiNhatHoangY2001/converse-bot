@@ -30,7 +30,7 @@ const LoginPage = () => {
       }
     } catch (errors) {
       if (isAxiosError<APIAuth.Error>(errors)) {
-        toast.error(errors.response?.data?.message || "Resend OTP Failed!");
+        toast.error(errors.response?.data?.message ?? "Resend OTP Failed!");
       }
     } finally {
       setIsLoading(false);

@@ -7,15 +7,16 @@ import useCountdown from "@hooks/use-countdown.ts";
 import {Box, CircularProgress, FormHelperText} from "@mui/material";
 import Button from "@mui/material/Button";
 import {authResendOTP, authVerifyEmail} from "@services/api/auth-api.ts";
-import {numberToTime} from "@utils/libs.ts";
+import {END_TIME} from "@utils/constants.ts";
+import {convertNum2Time} from "@utils/libs.ts";
 import {VerifyEmailSchema, VerifyEmailType} from "@utils/schema.ts";
 import {isAxiosError} from "axios";
 import {MuiOtpInput} from "mui-one-time-password-input";
 
-const FormVerifyEmail = () => {
+const VerifyEmailForm = () => {
   const navigate = useNavigate();
   const {email} = useParams();
-  const {current, reset} = useCountdown(0, 60 * 5);
+  const {current, reset} = useCountdown(0, END_TIME);
   const isEndTime = useMemo(() => +current === 0, [current]);
   const [isLoading, setIsLoading] = useState(false);
   const {
@@ -41,7 +42,7 @@ const FormVerifyEmail = () => {
       }
     } catch (error) {
       if (isAxiosError<APIAuth.VerifyEmail.ErrorVerifyEmail>(error)) {
-        toast(error.response?.data?.data[0].msg || "Verify email Failed!");
+        toast(error.response?.data?.data[0].msg ?? "Verify email Failed!");
       }
     } finally {
       setIsLoading(false);
@@ -62,7 +63,7 @@ const FormVerifyEmail = () => {
       }
     } catch (error) {
       if (isAxiosError<APIAuth.Error>(error)) {
-        toast(error.response?.data?.message || "Verify email Failed!");
+        toast(error.response?.data?.message ?? "Verify email Failed!");
       }
     } finally {
       setIsLoading(false);
@@ -103,7 +104,7 @@ const FormVerifyEmail = () => {
 
       <p className="flex justify-between text-sm">
         <span>Did not receive a code? Resend</span>
-        <span>{numberToTime(+current)}</span>
+        <span>{convertNum2Time(+current)}</span>
       </p>
 
       {isEndTime ? (
@@ -131,4 +132,4 @@ const FormVerifyEmail = () => {
   );
 };
 
-export default FormVerifyEmail;
+export default VerifyEmailForm;

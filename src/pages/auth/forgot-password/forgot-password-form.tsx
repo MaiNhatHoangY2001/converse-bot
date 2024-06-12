@@ -8,7 +8,7 @@ import {authForgotPassword} from "@services/api/auth-api.ts";
 import {SendEmailSchema, SendEmailType} from "@utils/schema.ts";
 import {isAxiosError} from "axios";
 
-const FormForgotPassword = () => {
+const ForgotPasswordForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const {
     control,
@@ -37,7 +37,7 @@ const FormForgotPassword = () => {
       }
     } catch (error) {
       if (isAxiosError<APIAuth.Error>(error)) {
-        toast.error(error.response?.data?.message || "Send email failed!");
+        toast.error(error.response?.data?.message ?? "Send email failed!");
       }
     } finally {
       setIsLoading(false);
@@ -78,4 +78,4 @@ const FormForgotPassword = () => {
   );
 };
 
-export default FormForgotPassword;
+export default ForgotPasswordForm;
