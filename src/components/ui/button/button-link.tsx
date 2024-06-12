@@ -1,7 +1,5 @@
-/* eslint-disable react/function-component-definition */
 import React from "react";
 import {Link} from "react-router-dom";
-import "../../styles/variables.scss";
 
 interface LinkProps {
   className: string;
@@ -9,7 +7,7 @@ interface LinkProps {
   children?: React.ReactNode;
 }
 
-const LinkBtn: React.FC<LinkProps> = ({className, children, to}) => {
+const ButtonLink: React.FC<LinkProps> = ({className, children, to}) => {
   return (
     <Link
       className={`${className} font-roboto text-white font-bold flex items-center justify-center p-1 rounded-full`}
@@ -20,4 +18,4 @@ const LinkBtn: React.FC<LinkProps> = ({className, children, to}) => {
   );
 };
 
-export default LinkBtn;
+export default ButtonLink;

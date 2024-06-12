@@ -1,3 +1,6 @@
+import React from "react";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import {
   FormControl,
   IconButton,
@@ -5,9 +8,6 @@ import {
   InputLabel,
   OutlinedInput,
 } from "@mui/material";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import React from "react";
 
 interface TypeProps<T> extends React.InputHTMLAttributes<T> {
   onChange?: () => void;

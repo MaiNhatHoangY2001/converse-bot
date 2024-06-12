@@ -1,7 +1,8 @@
 import Button from "@mui/material/Button";
-import "./About.scss";
 
-function About() {
+import "./about.scss";
+
+function AboutPage() {
   return (
     <div className="red-color font-bold">
       <Button variant="contained">about</Button>
@@ -9,4 +10,4 @@ function About() {
   );
 }
 
-export default About;
+export default AboutPage;

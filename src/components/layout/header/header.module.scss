@@ -1,16 +1,20 @@
-@import url("../../styles/variables.scss");
+@import url("../../../styles/variables.scss");
+
 .converseBot {
-  font-family: var(--font-family);
+  font-family: var(--font-family), serif;
 }
 
 @media screen and (max-width: 480px) {
   .container {
     grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+
     .converseBot {
       display: none;
     }
+
     .wrapperToolbar {
       grid-column: span 4 / span 4;
+
       .loginBtn,
       .registerBtn {
         font-size: 0.6rem;
@@ -22,8 +26,10 @@
 @media screen and (max-width: 768px) {
   .container {
     grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+
     .wrapperToolbar {
       grid-column: span 4 / span 4;
+
       .loginBtn,
       .registerBtn {
         width: 20% !important;

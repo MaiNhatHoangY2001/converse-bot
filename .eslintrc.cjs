@@ -20,11 +20,38 @@ module.exports = {
   parserOptions: {
     project: "./tsconfig.json",
   },
-  plugins: ["react-refresh"],
+  plugins: [
+    "@typescript-eslint",
+    "unused-imports",
+    "simple-import-sort",
+    "react-refresh",
+  ],
   rules: {
     "react-refresh/only-export-components": [
       "warn",
       {allowConstantExport: true},
+    ],
+    "simple-import-sort/exports": "error",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": ["error", {argsIgnorePattern: "^_"}],
+    "simple-import-sort/imports": [
+      "error",
+      {
+        groups: [
+          // Packages `react` related packages come first.
+          ["^react", "^@?\\w"],
+          // Internal packages.
+          ["^(@|components)(/.*|$)"],
+          // Side effect imports.
+          ["^\\u0000"],
+          // Parent imports. Put `..` last.
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          // Other relative imports. Put same-folder imports and `.` last.
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          // Style imports.
+          ["^.+\\.?(css)$"],
+        ],
+      },
     ],
     // Since react 17 we don't need to have React imported at the top
     "react/react-in-jsx-scope": "off",

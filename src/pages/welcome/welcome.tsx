@@ -1,8 +1,8 @@
-import WelcomeStyle from "./Welcome.module.scss";
-
+import Header from "@components/layout/header/header.tsx";
+import {IMAGES} from "@utils/constants.ts";
 import classNames from "classnames/bind";
-import IMAGES from "../../constants/imgUrl.ts";
-import Header from "@components/layout/Header.tsx";
+
+import WelcomeStyle from "./welcome.module.scss";
 
 const cx = classNames.bind(WelcomeStyle);
 
@@ -31,11 +31,7 @@ export default function Welcome() {
             "content__center",
             "flex flex-col justify-center pl-4 pr-4",
           ])}>
-          <img
-            className={cx(["voice", ""])}
-            src={IMAGES.voice}
-            alt="voice-gif"
-          />
+          <img className={cx(["voice", ""])} alt="voice-gif" />
           <img
             className={cx(["speak", "mt-[-45%] self-center"])}
             src={IMAGES.speakWithAI}

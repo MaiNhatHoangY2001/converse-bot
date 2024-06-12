@@ -1,11 +1,10 @@
 import {useState} from "react";
 import ReactFlagsSelect from "react-flags-select";
-
-import HeaderStyle from "./Header.module.scss";
-
+import ButtonLink from "@components/ui/button/button-link.tsx";
+import {IMAGES} from "@utils/constants.ts";
 import classNames from "classnames/bind";
-import IMAGES from "../../constants/imgUrl.ts";
-import LinkBtn from "@components/common/LinkBtn.tsx";
+
+import HeaderStyle from "./header.module.scss";
 
 const cx = classNames.bind(HeaderStyle);
 
@@ -41,22 +40,22 @@ export default function Header() {
           selected={selectedCode}
           onSelect={code => setSelectedCode(code)}
         />
-        <LinkBtn
+        <ButtonLink
           className={cx([
             "loginBtn",
             "bg-accent-color text-sm w-[10%] hover:bg-accent-color4",
           ])}
           to="/auth/login">
           LOGIN
-        </LinkBtn>
-        <LinkBtn
+        </ButtonLink>
+        <ButtonLink
           className={cx([
             "registerBtn",
             "bg-primary-color text-sm w-[10%] hover:bg-accent-color4",
           ])}
           to="/auth/register">
           REGISTER
-        </LinkBtn>
+        </ButtonLink>
       </div>
     </div>
   );
