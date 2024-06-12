@@ -2,17 +2,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Monoton&family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap");
 // Honk
 @import url("https://fonts.googleapis.com/css2?family=Honk&family=Mochiy+Pop+One&family=Monoton&family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap");
+
 .container {
   background: linear-gradient(to bottom, black, #174444);
+
   .content {
     &__top {
-      font-family: "Rajdhani";
+      font-family: "Rajdhani", serif;
     }
+
     &__bottom {
       .masterTxt,
       .englishTxt,
       .theWorldTxt {
-        font-family: "Honk";
+        font-family: "Honk", serif;
       }
     }
   }
@@ -34,21 +37,25 @@
       &__top {
         font-size: 3.5rem;
       }
+
       &__center {
         .voice,
         .speak {
           width: 500px;
           height: 450px;
         }
+
         .speak {
           height: 300px;
           margin-top: -70%;
         }
       }
+
       &__bottom {
         .masterTxt {
           font-size: 4.5rem;
         }
+
         .englishTxt,
         .theWorldTxt {
           font-size: 3rem;
@@ -64,21 +71,25 @@
       &__top {
         font-size: 3rem;
       }
+
       &__center {
         .voice,
         .speak {
           width: 450px;
           height: 400px;
         }
+
         .speak {
           height: 250px;
           margin-top: -70%;
         }
       }
+
       &__bottom {
         .masterTxt {
           font-size: 4rem;
         }
+
         .englishTxt,
         .theWorldTxt {
           font-size: 2.5rem;
@@ -94,21 +105,25 @@
       &__top {
         font-size: 2.2rem;
       }
+
       &__center {
         .voice,
         .speak {
           width: 350px;
           height: 350px;
         }
+
         .speak {
           height: 200px;
           margin-top: -80%;
         }
       }
+
       &__bottom {
         .masterTxt {
           font-size: 3.5rem;
         }
+
         .englishTxt,
         .theWorldTxt {
           font-size: 2rem;
