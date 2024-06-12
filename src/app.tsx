@@ -8,7 +8,17 @@ import "./styles/global.scss";
 
 // Config theme for MUI
 // https://mui.com/material-ui/customization/palette/#custom-colors
-let theme = createTheme({});
+let theme = createTheme({
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          background: "#fff",
+        },
+      },
+    },
+  },
+});
 theme = createTheme(theme, {
   palette: {
     primary: {

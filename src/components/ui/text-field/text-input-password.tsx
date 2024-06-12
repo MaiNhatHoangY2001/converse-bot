@@ -13,7 +13,7 @@ interface TypeProps<T> extends React.InputHTMLAttributes<T> {
   onChange?: () => void;
 }
 
-const TextInputPassword = <T,>({value, onChange}: TypeProps<T>) => {
+const TextInputPassword = <T,>({value, onChange, className}: TypeProps<T>) => {
   const [showPassword, setShowPassword] = React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword(show => !show);
@@ -32,6 +32,7 @@ const TextInputPassword = <T,>({value, onChange}: TypeProps<T>) => {
         inputComponent="input"
         onChange={onChange}
         type={showPassword ? "text" : "password"}
+        className={`bg-white ${className}`}
         endAdornment={
           <InputAdornment position="end">
             <IconButton
