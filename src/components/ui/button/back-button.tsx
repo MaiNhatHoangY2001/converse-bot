@@ -1,22 +1,29 @@
+import React from "react";
 import {useNavigate} from "react-router-dom";
+import {Button} from "@mui/base/Button";
 import {ArrowBackIos} from "@mui/icons-material";
-import Button from "@mui/material/Button";
 
-const BackButton = () => {
+import "@styles/variables.scss";
+
+interface Props {
+  children?: React.ReactNode;
+}
+
+const Btn: React.FC<Props> = ({children}) => {
   const navigate = useNavigate();
 
   return (
     <Button
-      startIcon={<ArrowBackIos />}
-      variant="text"
+      className="flex items-center"
       onClick={() => {
         // navigate(-1) is equivalent to hitting the back button
         // link: https://reactrouter.com/en/main/hooks/use-navigate#usenavigate
         navigate(-1);
       }}>
-      Go Back
+      <ArrowBackIos fontSize="small" />
+      {children}
     </Button>
   );
 };
 
-export default BackButton;
+export default Btn;

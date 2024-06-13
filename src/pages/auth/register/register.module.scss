@@ -1,0 +1,79 @@
+.container {
+  font-family: var(--font-family);
+  .wrp {
+    .register-form {
+      &__bottom {
+        .registerBtn {
+          box-shadow: 0 5px 10px 1px #bababa;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .wrp {
+      padding-bottom: 5%;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .logo {
+      width: 15%;
+      height: 18%;
+    }
+    .wrp {
+      padding-bottom: 7%;
+      .registerTitle {
+        font-size: 2.2rem;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .logo {
+      width: 12%;
+      height: 15%;
+    }
+    .wrp {
+      width: 60%;
+      padding-bottom: 12%;
+      .registerTitle {
+        font-size: 2rem;
+      }
+      .txt {
+        font-size: 0.7rem;
+      }
+      .register-form {
+        &__top {
+          .terms span {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+    .logo {
+      position: relative;
+      width: 4.5rem;
+      height: 15%;
+      right: 0;
+    }
+    .wrp {
+      width: 90%;
+      height: 85%;
+      padding-bottom: 17%;
+      .registerTitle {
+        font-size: 1.5rem;
+      }
+      .txt {
+        font-size: 0.75rem;
+      }
+      .register-form {
+        &__top {
+          .terms span {
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+  }
+}

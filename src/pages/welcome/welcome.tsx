@@ -1,10 +1,12 @@
 import Header from "@components/layout/header/header.tsx";
+import ButtonLink from "@components/ui/button/button-link";
+import {ArrowForwardIos} from "@mui/icons-material";
 import {IMAGES} from "@utils/constants.ts";
 import classNames from "classnames/bind";
 
-import WelcomeStyle from "./welcome.module.scss";
+import styles from "@pages/welcome/welcome.module.scss";
 
-const cx = classNames.bind(WelcomeStyle);
+const cx = classNames.bind(styles);
 
 export default function Welcome() {
   return (
@@ -14,6 +16,12 @@ export default function Welcome() {
         "h-screen flex flex-col overflow-y-auto overflow-x-hidden",
       ])}>
       <Header />
+      <ButtonLink
+        className="absolute bottom-2 right-2 w-fit p-3 gap-1 bg-primary-color hover:bg-accent-color hover:text-white"
+        to="/auth/first-time-login">
+        Continue
+        <ArrowForwardIos fontSize="small" />
+      </ButtonLink>
       <div
         className={cx([
           "content",
@@ -31,7 +39,11 @@ export default function Welcome() {
             "content__center",
             "flex flex-col justify-center pl-4 pr-4",
           ])}>
-          <img className={cx(["voice", ""])} alt="voice-gif" />
+          <img
+            className={cx(["voice", ""])}
+            src={IMAGES.voice}
+            alt="voice-gif"
+          />
           <img
             className={cx(["speak", "mt-[-45%] self-center"])}
             src={IMAGES.speakWithAI}

@@ -15,11 +15,13 @@ export const HEADER_VERIFY_EMAIL = {
   subTitle: "An authentication code has been sent to your email.",
 };
 
-export const assetsImages: string = "/assets/images";
+export const converseStorageUrl: string =
+  "https://converse-storage.s3.ap-southeast-1.amazonaws.com";
 export const IMAGES = {
-  logo: `${assetsImages}/logo-conversebot.png`,
-  voice: `${assetsImages}/voice.gif`,
-  speakWithAI: `${assetsImages}/speak-with-AI.png`,
+  logo: `${converseStorageUrl}/logo-conversebot.png`,
+  voice: `${converseStorageUrl}/voice.gif`,
+  speakWithAI: `${converseStorageUrl}/speak-with-AI.png`,
+  fstTimeLogin: `${converseStorageUrl}/first-time-login-img.png`,
 };
 
 export const END_TIME = 60 * 5;

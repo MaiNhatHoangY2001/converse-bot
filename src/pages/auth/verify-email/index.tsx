@@ -7,7 +7,7 @@ const VerifyEmail = () => {
   const {title, subTitle} = HEADER_VERIFY_EMAIL;
   return (
     <main className="max-w-md space-y-8 bg-black/5 p-8 rounded-3xl">
-      <BackButton />
+      <BackButton>Go Back</BackButton>
       <AuthHeader title={title} subTitle={subTitle} />
       <VerifyEmailForm />
     </main>
