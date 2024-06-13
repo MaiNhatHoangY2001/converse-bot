@@ -3,9 +3,10 @@ import {Controller, useForm} from "react-hook-form";
 import toast from "react-hot-toast";
 import {redirect, useNavigate, useParams} from "react-router-dom";
 import AuthHeader from "@components/common/auth-header";
-import BackButton from "@components/ui/button/back-button";
+import BackButton from "@components/ui/button/btn";
 import {zodResolver} from "@hookform/resolvers/zod";
 import useCountdown from "@hooks/use-countdown.ts";
+import {ArrowBackIos} from "@mui/icons-material";
 import {Box, CircularProgress, FormHelperText} from "@mui/material";
 import Button from "@mui/material/Button";
 import {authResendOTP, authVerifyEmail} from "@services/api/auth-api.ts";
@@ -91,7 +92,15 @@ export default function VerifyEmailRegister() {
 
   return (
     <main className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-md space-y-8 bg-black/5 p-8 rounded-3xl">
-      <BackButton>Back to register</BackButton>
+      <BackButton
+        className="flex items-center"
+        type="button"
+        onClick={() => {
+          navigate(-1);
+        }}>
+        <ArrowBackIos fontSize="small" />
+        Back to register
+      </BackButton>
       <AuthHeader title={title} subTitle={subTitle} />
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <Controller

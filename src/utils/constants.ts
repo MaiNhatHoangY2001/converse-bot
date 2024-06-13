@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+import.meta.env;
+
 export const HEADER_FORGOT_PASSWORD = {
   title: "Forgot your password?",
   subTitle:
