@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import {auth} from "../endpoind.ts";
+import { auth } from "../endpoind.ts";
 
 const BaseUrlApi = import.meta.env.VITE_BASE_API_URL;
 

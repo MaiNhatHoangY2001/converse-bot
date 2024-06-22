@@ -1,12 +1,12 @@
-import {useNavigate} from "react-router-dom";
 import AuthHeader from "@components/common/auth-header.tsx";
 import BackButton from "@components/ui/button/btn";
-import {ArrowBackIos} from "@mui/icons-material";
+import { ArrowBackIos } from "@mui/icons-material";
 import ForgotPasswordForm from "@pages/auth/forgot-password/forgot-password-form.tsx";
-import {HEADER_FORGOT_PASSWORD} from "@utils/constants.ts";
+import { HEADER_FORGOT_PASSWORD } from "@utils/constants.ts";
+import { useNavigate } from "react-router-dom";
 
 const ForgotPasswordPage = () => {
-  const {title, subTitle} = HEADER_FORGOT_PASSWORD;
+  const { title, subTitle } = HEADER_FORGOT_PASSWORD;
   const navigate = useNavigate();
 
   return (
@@ -16,7 +16,8 @@ const ForgotPasswordPage = () => {
         type="button"
         onClick={() => {
           navigate(-1);
-        }}>
+        }}
+      >
         <ArrowBackIos fontSize="small" />
         Back to login
       </BackButton>

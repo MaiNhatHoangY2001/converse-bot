@@ -1,12 +1,12 @@
-import {useState} from "react";
-import {Controller, useForm} from "react-hook-form";
-import toast from "react-hot-toast";
-import {zodResolver} from "@hookform/resolvers/zod";
-import {CircularProgress, TextField} from "@mui/material";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { CircularProgress, TextField } from "@mui/material";
 import Button from "@mui/material/Button";
-import {authForgotPassword} from "@services/api/auth-api.ts";
-import {SendEmailSchema, SendEmailType} from "@utils/schema.ts";
-import {isAxiosError} from "axios";
+import { authForgotPassword } from "@services/api/auth-api.ts";
+import { SendEmailSchema, SendEmailType } from "@utils/schema.ts";
+import { isAxiosError } from "axios";
+import { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 const ForgotPasswordForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -14,7 +14,7 @@ const ForgotPasswordForm = () => {
     control,
     handleSubmit,
     reset,
-    formState: {errors, isValid},
+    formState: { errors, isValid },
   } = useForm<SendEmailType>({
     resolver: zodResolver(SendEmailSchema),
   });
@@ -23,7 +23,7 @@ const ForgotPasswordForm = () => {
     try {
       setIsLoading(true);
       const res = await authForgotPassword(data);
-      const {message} = res.data;
+      const { message } = res.data;
       if (message) {
         // Notify when server send successfully
         toast.success(message);
@@ -46,10 +46,11 @@ const ForgotPasswordForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-full flex flex-col gap-8">
+      className="w-full flex flex-col gap-8"
+    >
       <Controller
         control={control}
-        render={({field}) => {
+        render={({ field }) => {
           return (
             <TextField
               fullWidth
@@ -71,7 +72,8 @@ const ForgotPasswordForm = () => {
         disabled={isLoading || !isValid}
         className="h-12 flex gap-4"
         variant="contained"
-        color="secondary">
+        color="secondary"
+      >
         {isLoading ? <CircularProgress size={16} /> : "Submit"}
       </Button>
     </form>

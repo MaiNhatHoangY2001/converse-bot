@@ -1,34 +1,34 @@
-import {useEffect, useMemo, useState} from "react";
-import {Controller, useForm} from "react-hook-form";
-import toast from "react-hot-toast";
-import {redirect, useNavigate, useParams} from "react-router-dom";
 import AuthHeader from "@components/common/auth-header";
 import BackButton from "@components/ui/button/btn";
-import {zodResolver} from "@hookform/resolvers/zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import useCountdown from "@hooks/use-countdown.ts";
-import {ArrowBackIos} from "@mui/icons-material";
-import {Box, CircularProgress, FormHelperText} from "@mui/material";
+import { ArrowBackIos } from "@mui/icons-material";
+import { Box, CircularProgress, FormHelperText } from "@mui/material";
 import Button from "@mui/material/Button";
-import {authResendOTP, authVerifyEmail} from "@services/api/auth-api.ts";
-import {END_TIME, HEADER_VERIFY_EMAIL} from "@utils/constants.ts";
-import {convertNum2Time} from "@utils/libs.ts";
-import {VerifyEmailSchema, VerifyEmailType} from "@utils/schema.ts";
-import {isAxiosError} from "axios";
-import {MuiOtpInput} from "mui-one-time-password-input";
+import { authResendOTP, authVerifyEmail } from "@services/api/auth-api.ts";
+import { END_TIME, HEADER_VERIFY_EMAIL } from "@utils/constants.ts";
+import { convertNum2Time } from "@utils/libs.ts";
+import { VerifyEmailSchema, VerifyEmailType } from "@utils/schema.ts";
+import { isAxiosError } from "axios";
+import { MuiOtpInput } from "mui-one-time-password-input";
+import { useEffect, useMemo, useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { redirect, useNavigate, useParams } from "react-router-dom";
 
 export default function VerifyEmailRegister() {
   const navigate = useNavigate();
 
-  const {title, subTitle} = HEADER_VERIFY_EMAIL;
+  const { title, subTitle } = HEADER_VERIFY_EMAIL;
 
-  const {email} = useParams();
-  const {current, reset} = useCountdown(0, END_TIME);
+  const { email } = useParams();
+  const { current, reset } = useCountdown(0, END_TIME);
   const isEndTime = useMemo(() => +current === 0, [current]);
   const [isLoading, setIsLoading] = useState(false);
   const {
     control,
     handleSubmit,
-    formState: {isValid},
+    formState: { isValid },
   } = useForm<VerifyEmailType>({
     resolver: zodResolver(VerifyEmailSchema),
   });
@@ -97,7 +97,8 @@ export default function VerifyEmailRegister() {
         type="button"
         onClick={() => {
           navigate(-1);
-        }}>
+        }}
+      >
         <ArrowBackIos fontSize="small" />
         Back to register
       </BackButton>
@@ -106,11 +107,11 @@ export default function VerifyEmailRegister() {
         <Controller
           name="otp"
           control={control}
-          render={({field, fieldState}) => (
+          render={({ field, fieldState }) => (
             <Box>
               <MuiOtpInput
-                TextFieldsProps={{disabled: isEndTime}}
-                sx={{gap: 1}}
+                TextFieldsProps={{ disabled: isEndTime }}
+                sx={{ gap: 1 }}
                 {...field}
                 length={6}
               />
@@ -131,7 +132,8 @@ export default function VerifyEmailRegister() {
             variant="contained"
             color="secondary"
             type="button"
-            className="h-12">
+            className="h-12"
+          >
             {isLoading ? <CircularProgress size={16} /> : "Resend OTP"}
           </Button>
         ) : (
@@ -141,7 +143,8 @@ export default function VerifyEmailRegister() {
             variant="contained"
             color="secondary"
             type="submit"
-            className="h-12">
+            className="h-12"
+          >
             {isLoading ? <CircularProgress size={16} /> : "Verify"}
           </Button>
         )}
