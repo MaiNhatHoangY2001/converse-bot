@@ -119,7 +119,11 @@ const LoginPage = () => {
 
             <p className="text-center text-sm font-semibold">
               <span className="font-medium">Don’t have account? </span>
-              <Link color="primary" className="" href="/" underline="none">
+              <Link
+                color="primary"
+                className=""
+                href="/auth/register"
+                underline="none">
                 Register
               </Link>
             </p>

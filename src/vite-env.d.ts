@@ -97,4 +97,27 @@ declare namespace APIAuth {
       location: string;
     }
   }
+
+  declare namespace Register {
+    interface RequestPayload {
+      firstName: string;
+      lastName: string;
+      email: string;
+      password: string;
+    }
+
+    interface Data {
+      _id: string;
+      firstName: string;
+      lastName: string;
+      email: string;
+    }
+
+    interface Response {
+      status: number;
+      message: string;
+      data: Data;
+      code: number;
+    }
+  }
 }

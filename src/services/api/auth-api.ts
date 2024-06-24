@@ -23,3 +23,7 @@ export const authResendOTP = (data: APIAuth.ResendOTP.RequestPayload) => {
 export const authVerifyEmail = (data: APIAuth.VerifyEmail.RequestPayload) => {
   return authService.verifyEmail(data);
 };
+
+export const authRegister = (data: APIAuth.Register.RequestPayload) => {
+  return authService.register(data);
+};

@@ -35,6 +35,12 @@ const authService = {
       data,
     );
   },
+  register: (data: APIAuth.Register.RequestPayload) => {
+    return axios.post<APIAuth.Register.Response>(
+      `${BaseUrlApi + auth}/register`,
+      data,
+    );
+  },
 };
 
 export default authService;
