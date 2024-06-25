@@ -1,15 +1,15 @@
 import { Button, Divider } from "@mui/material";
-import { FC, PropsWithChildren } from "react";
+import { FC, memo as Memo, PropsWithChildren } from "react";
 
 import LoginForm from "./login-form.tsx";
 
-const LoginDivider = () => {
+const LoginDivider = Memo(() => {
   return (
     <Divider>
-      s<p className="text-sm text-[#313131]">Or login with</p>
+      <p className="text-sm text-[#313131]">Or login with</p>
     </Divider>
   );
-};
+});
 
 const ConnectGoogleButton = () => {
   return (
@@ -41,7 +41,7 @@ const ContainerBodyLogin: FC<PropsWithChildren> = ({ children }) => {
   );
 };
 
-const LoginBody = () => {
+const LoginMain = () => {
   return (
     <ContainerBodyLogin>
       <LoginHeader
@@ -58,4 +58,4 @@ const LoginBody = () => {
   );
 };
 
-export default LoginBody;
+export default LoginMain;

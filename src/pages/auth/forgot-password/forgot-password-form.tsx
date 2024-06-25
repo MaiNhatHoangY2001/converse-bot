@@ -1,6 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CircularProgress, TextField } from "@mui/material";
-import Button from "@mui/material/Button";
+import { Button, CircularProgress, TextField } from "@mui/material";
 import { authForgotPassword } from "@services/api/auth-api.ts";
 import { SendEmailSchema, SendEmailType } from "@utils/schema.ts";
 import { isAxiosError } from "axios";
@@ -25,10 +24,8 @@ const ForgotPasswordForm = () => {
       const res = await authForgotPassword(data);
       const { message } = res.data;
       if (message) {
-        // Notify when server send successfully
         toast.success(message);
 
-        // add email into url query params
         const search = new URLSearchParams();
         search.append("email", data.email);
 

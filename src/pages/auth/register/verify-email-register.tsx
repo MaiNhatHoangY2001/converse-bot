@@ -7,7 +7,7 @@ import { Box, CircularProgress, FormHelperText } from "@mui/material";
 import Button from "@mui/material/Button";
 import { authResendOTP, authVerifyEmail } from "@services/api/auth-api.ts";
 import { END_TIME, HEADER_VERIFY_EMAIL } from "@utils/constants.ts";
-import { convertNum2Time } from "@utils/libs.ts";
+import convertNum2Time from "@utils/libs.ts";
 import { VerifyEmailSchema, VerifyEmailType } from "@utils/schema.ts";
 import { isAxiosError } from "axios";
 import { MuiOtpInput } from "mui-one-time-password-input";
