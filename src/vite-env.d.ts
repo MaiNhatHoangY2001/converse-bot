@@ -1,8 +1,10 @@
 /// <reference types="vite/client" />
+/// <reference types="react/canary" />
 
 interface ImportMetaEnv {
   readonly VITE_BASE_URL: string;
   readonly VITE_BASE_API_URL: string;
+  readonly VITE_BASE_S3_URL: string;
   // more env variables...
 }
 

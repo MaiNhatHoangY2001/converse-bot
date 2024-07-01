@@ -1,5 +1,13 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import {useState} from "react";
+import Btn from "@components/ui/button/btn";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { CircularProgress, Stack } from "@mui/material";
+import styles from "@pages/auth/register/register.module.scss";
+import { authRegister } from "@services/api/auth-api";
+import { IMAGES } from "@utils/constants";
+import { SchemaYup, schemaYup } from "@utils/schema-yup.ts";
+import { isAxiosError } from "axios";
+import classNames from "classnames/bind";
+import { useState } from "react";
 import {
   CheckboxElement,
   PasswordElement,
@@ -8,17 +16,7 @@ import {
   useForm,
 } from "react-hook-form-mui";
 import toast from "react-hot-toast";
-import {Link, useNavigate} from "react-router-dom";
-import Btn from "@components/ui/button/btn";
-import {yupResolver} from "@hookform/resolvers/yup";
-import {CircularProgress, Stack} from "@mui/material";
-import {authRegister} from "@services/api/auth-api";
-import {IMAGES} from "@utils/constants";
-import {schemaYup} from "@utils/schemaYup";
-import {isAxiosError} from "axios";
-import classNames from "classnames/bind";
-
-import styles from "@pages/auth/register/register.module.scss";
+import { Link, useNavigate } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
@@ -26,11 +24,11 @@ export default function Register() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const {control, handleSubmit} = useForm({
+  const { control, handleSubmit } = useForm<SchemaYup>({
     resolver: yupResolver(schemaYup),
   });
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: SchemaYup) => {
     const account = {
       firstName: data.firstName,
       lastName: data.lastName,
@@ -55,7 +53,8 @@ export default function Register() {
       className={cx([
         "container",
         "w-screen h-screen flex justify-center items-center bg-static-color pt-6 pb-6",
-      ])}>
+      ])}
+    >
       <img
         src={IMAGES.logo}
         alt="logo"
@@ -68,7 +67,8 @@ export default function Register() {
         className={cx([
           "wrp",
           "w-[60%] h-fit pt-5 pr-10 pl-10 pb-16 flex flex-col justify-around bg-background-color rounded-3xl overflow-y-auto",
-        ])}>
+        ])}
+      >
         <div className={cx(["registerTitle", "text-4xl font-semibold"])}>
           Register
         </div>
@@ -80,7 +80,8 @@ export default function Register() {
         <form
           className={cx(["register-form"])}
           onSubmit={handleSubmit(onSubmit)}
-          noValidate>
+          noValidate
+        >
           <Stack spacing={2}>
             {/* top */}
             <div className={cx(["register-form__top", "flex flex-col gap-6"])}>
@@ -140,21 +141,21 @@ export default function Register() {
               <CircularProgress size={16} />
             ) : (
               <div
-                className={cx([
-                  "register-form__bottom",
-                  "flex flex-col gap-4",
-                ])}>
+                className={cx(["register-form__bottom", "flex flex-col gap-4"])}
+              >
                 <Btn
                   className={cx(["registerBtn", "w-full"])}
                   type="submit"
-                  onClick={() => {}}>
+                  onClick={() => {}}
+                >
                   Create account
                 </Btn>
                 <div className="flex justify-center items-center gap-1">
                   Already have an account?
                   <Link
                     to="/auth/login"
-                    className="text-primary-color font-semibold hover:text-accent-color">
+                    className="text-primary-color font-semibold hover:text-accent-color"
+                  >
                     Login
                   </Link>
                 </div>

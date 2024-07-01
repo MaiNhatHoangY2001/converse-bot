@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 interface Counter {
   current: string;
@@ -21,7 +21,7 @@ const useCountdown = (min: number, max: number): Counter => {
     }
 
     const interval = setInterval(() => {
-      setCount(prev => prev - 1);
+      setCount((prev) => prev - 1);
     }, 1000);
 
     if (count <= min) {
@@ -30,8 +30,7 @@ const useCountdown = (min: number, max: number): Counter => {
       return;
     }
 
-    // eslint-disable-next-line consistent-return
-    return () => clearInterval(interval);
+    clearInterval(interval);
   }, [count, min, max, paused]);
 
   return {

@@ -1,28 +1,28 @@
-import {useEffect, useMemo, useState} from "react";
-import {Controller, useForm} from "react-hook-form";
-import toast from "react-hot-toast";
-import {redirect, useNavigate, useParams} from "react-router-dom";
-import {zodResolver} from "@hookform/resolvers/zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import useCountdown from "@hooks/use-countdown.ts";
-import {Box, CircularProgress, FormHelperText} from "@mui/material";
+import { Box, CircularProgress, FormHelperText } from "@mui/material";
 import Button from "@mui/material/Button";
-import {authResendOTP, authVerifyEmail} from "@services/api/auth-api.ts";
-import {END_TIME} from "@utils/constants.ts";
-import {convertNum2Time} from "@utils/libs.ts";
-import {VerifyEmailSchema, VerifyEmailType} from "@utils/schema.ts";
-import {isAxiosError} from "axios";
-import {MuiOtpInput} from "mui-one-time-password-input";
+import { authResendOTP, authVerifyEmail } from "@services/api/auth-api.ts";
+import { END_TIME } from "@utils/constants.ts";
+import convertNum2Time from "@utils/libs.ts";
+import { VerifyEmailSchema, VerifyEmailType } from "@utils/schema.ts";
+import { isAxiosError } from "axios";
+import { MuiOtpInput } from "mui-one-time-password-input";
+import { useEffect, useMemo, useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { redirect, useNavigate, useParams } from "react-router-dom";
 
 const VerifyEmailForm = () => {
   const navigate = useNavigate();
-  const {email} = useParams();
-  const {current, reset} = useCountdown(0, END_TIME);
+  const { email } = useParams();
+  const { current, reset } = useCountdown(0, END_TIME);
   const isEndTime = useMemo(() => +current === 0, [current]);
   const [isLoading, setIsLoading] = useState(false);
   const {
     control,
     handleSubmit,
-    formState: {isValid},
+    formState: { isValid },
   } = useForm<VerifyEmailType>({
     resolver: zodResolver(VerifyEmailSchema),
   });
@@ -87,11 +87,11 @@ const VerifyEmailForm = () => {
       <Controller
         name="otp"
         control={control}
-        render={({field, fieldState}) => (
+        render={({ field, fieldState }) => (
           <Box>
             <MuiOtpInput
-              TextFieldsProps={{disabled: isEndTime}}
-              sx={{gap: 1}}
+              TextFieldsProps={{ disabled: isEndTime }}
+              sx={{ gap: 1 }}
               {...field}
               length={6}
             />
@@ -114,7 +114,8 @@ const VerifyEmailForm = () => {
           variant="contained"
           color="secondary"
           type="button"
-          className="h-12">
+          className="h-12"
+        >
           {isLoading ? <CircularProgress size={16} /> : "Resend OTP"}
         </Button>
       ) : (
@@ -124,7 +125,8 @@ const VerifyEmailForm = () => {
           variant="contained"
           color="secondary"
           type="submit"
-          className="h-12">
+          className="h-12"
+        >
           {isLoading ? <CircularProgress size={16} /> : "Verify"}
         </Button>
       )}

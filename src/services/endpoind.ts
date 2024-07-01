@@ -1,1 +1,2 @@
-export const auth = "api/auth";
+const auth = "api/auth";
+export default auth;

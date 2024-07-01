@@ -1,4 +1,4 @@
-import {Navigate} from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 /**
  * The PrivateRoute function checks if the user is authenticated based on the
@@ -13,7 +13,7 @@ import {Navigate} from "react-router-dom";
  * localStorage). If the user is not authenticated, it returns a Navigate component
  * that redirects the user to the "/auth/login" route.
  */
-export default function PrivateRoute({element}: {element: JSX.Element}) {
+export default function PrivateRoute({ element }: { element: JSX.Element }) {
   const isAuthenticated = !!localStorage.getItem("accessToken"); // Example auth check
   return isAuthenticated ? element : <Navigate to="/auth/login" />;
 }

@@ -1,7 +1,6 @@
-import {Navigate, Route, Routes} from "react-router-dom";
 import FirstTimeLogin from "@pages/auth/first-time-login/first-time-login.tsx";
 import ForgotPasswordPage from "@pages/auth/forgot-password";
-import LoginPage from "@pages/auth/login.tsx";
+import LoginPage from "@pages/auth/login/login.tsx";
 import RegisterPage from "@pages/auth/register/register.tsx";
 import VerifyEmailRegister from "@pages/auth/register/verify-email-register.tsx";
 import ResetPasswordPage from "@pages/auth/reset-password";
@@ -10,9 +9,9 @@ import ErrorPage from "@pages/error-page.tsx";
 import AboutPage from "@pages/landing-page/about/about-page.tsx";
 import HomePage from "@pages/landing-page/home/home-page.tsx";
 import Welcome from "@pages/welcome/welcome.tsx";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 import LayoutAuth from "../layouts/layout-auth.tsx";
-
 import PrivateRoute from "./private-route.tsx";
 import PublicRoute from "./public-route.tsx";
 

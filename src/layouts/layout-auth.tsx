@@ -1,5 +1,5 @@
-import {Outlet} from "react-router-dom";
 import Logo from "@components/common/logo.tsx";
+import { Outlet } from "react-router-dom";
 
 const LayoutAuth = () => {
   return (

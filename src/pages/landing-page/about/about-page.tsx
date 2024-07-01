@@ -1,6 +1,6 @@
-import Button from "@mui/material/Button";
-
 import "./about.scss";
+
+import Button from "@mui/material/Button";
 
 function AboutPage() {
   return (

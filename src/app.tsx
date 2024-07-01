@@ -1,10 +1,10 @@
-import {Toaster} from "react-hot-toast";
-import {BrowserRouter as Router} from "react-router-dom";
-import {alpha, createTheme, ThemeProvider} from "@mui/material";
+import "./styles/global.scss";
+
+import { alpha, createTheme, ThemeProvider } from "@mui/material";
+import { Toaster } from "react-hot-toast";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import AppRoutes from "./routers/app-routes.tsx";
-
-import "./styles/global.scss";
 
 // Config theme for MUI
 // https://mui.com/material-ui/customization/palette/#custom-colors

@@ -1,22 +1,22 @@
-import {useState} from "react";
-import {Controller, useForm} from "react-hook-form";
-import toast from "react-hot-toast";
-import {useNavigate, useParams} from "react-router-dom";
-import {zodResolver} from "@hookform/resolvers/zod";
-import {CircularProgress, TextField} from "@mui/material";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { CircularProgress, TextField } from "@mui/material";
 import Button from "@mui/material/Button";
-import {authResetPassword} from "@services/api/auth-api.ts";
-import {ResetPasswordSchema, ResetPasswordType} from "@utils/schema.ts";
-import {isAxiosError} from "axios";
+import { authResetPassword } from "@services/api/auth-api.ts";
+import { ResetPasswordSchema, ResetPasswordType } from "@utils/schema.ts";
+import { isAxiosError } from "axios";
+import { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ResetPasswordForm = () => {
   const navigate = useNavigate();
-  const {id} = useParams();
+  const { id } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const {
     control,
     handleSubmit,
-    formState: {errors, isValid},
+    formState: { errors, isValid },
   } = useForm<ResetPasswordType>({
     resolver: zodResolver(ResetPasswordSchema),
     mode: "onChange",
@@ -49,7 +49,7 @@ const ResetPasswordForm = () => {
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8">
       <Controller
         control={control}
-        render={({field}) => {
+        render={({ field }) => {
           return (
             <TextField
               variant="outlined"
@@ -65,7 +65,7 @@ const ResetPasswordForm = () => {
       />
       <Controller
         control={control}
-        render={({field}) => {
+        render={({ field }) => {
           return (
             <TextField
               variant="outlined"
@@ -85,7 +85,8 @@ const ResetPasswordForm = () => {
         variant="contained"
         type="submit"
         color="secondary"
-        className="h-12">
+        className="h-12"
+      >
         {isLoading ? <CircularProgress size={16} /> : "Set Password"}
       </Button>
     </form>
